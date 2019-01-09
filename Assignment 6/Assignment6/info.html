@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="normalize.css" type="text/css" />
+        <script src="info.js"></script>
+        <title>Vuong's Log In Page</title>
+    </head>
+
+    <body>
+        <header>
+            <img id="logo" alt="Shop Logo" src="images/logo.png" />
+            <h1>Signup for Edward's Shop</h1>
+        </header>
+
+        <main>
+            <nav class="navi">
+                <span id="menu-text">Menu:</span>
+                <ul>
+                    <li><a href="honesty.html">Welcome</a></li>
+                    <li><a href="info.html">Signup</a></li>
+                </ul>
+            </nav>
+            <div id="formholder">
+                <p>Please fill in your information:</p>
+                <form
+                    id="signupForm"
+                    name="signup"
+                    action="https://httpbin.org/post"
+                    method="POST"
+                >
+                    <label for="s-username">Username: </label>
+                    <input
+                        id="s-username"
+                        name="username"
+                        type="text"
+                        required
+                    />
+
+                    <label for="s-password">Password:</label>
+                    <input
+                        id="s-password"
+                        name="password"
+                        type="password"
+                        required
+                    />
+
+                    <label for="s-cpassword">Confirm Password:</label>
+                    <input
+                        id="s-cpassword"
+                        name="cpassword"
+                        type="password"
+                        required
+                    />
+
+                    <label for="s-fname">First Name:</label>
+                    <input
+                        id="s-fname"
+                        name="fname"
+                        type="text"
+                        required
+                        pattern="[A-Z][a-zA-Z]*"
+                        placeholder="must start with capital letter and no numbers..."
+                    />
+
+                    <label for="s-lname">Last Name:</label>
+                    <input
+                        id="s-lname"
+                        name="lname"
+                        type="text"
+                        required
+                        pattern="[A-Z][a-zA-Z]*"
+                        placeholder="must start with capital letter and no numbers..."
+                    />
+
+                    <label for="s-edu">Education:</label>
+                    <input
+                        id="s-edu"
+                        name="education"
+                        type="text"
+                        list="education-list"
+                        placeholder="-select-"
+                        required
+                    />
+
+                    <datalist id="education-list">
+                        <option value="-select-"></option>
+                        <option value="Technical Degree"></option>
+                        <option value="College Degree"></option>
+                        <option value="Bachelor's Degree"></option>
+                        <option value="Master's Degree"></option>
+                        <option value="Others"></option>
+                    </datalist>
+
+                    <label>Education Status: </label>
+                    <div class="edustatus">
+                        <input
+                            name="edus"
+                            type="radio"
+                            value="Graduated"
+                            required
+                        />Graduated
+                        <input
+                            name="edus"
+                            type="radio"
+                            value="Currently enrolled"
+                        />Currently enrolled
+                        <input
+                            name="edus"
+                            type="radio"
+                            value="Did not graduate"
+                        />Did not graduate
+                    </div>
+
+                    <label for="s-email">Email:</label>
+                    <input
+                        id="s-email"
+                        name="email"
+                        type="email"
+                        placeholder="example@abc.com"
+                        required
+                    />
+
+                    <label for="s-age">Age:</label>
+                    <input
+                        id="s-age"
+                        name="age"
+                        type="number"
+                        placeholder="between 18-60"
+                        required
+                    />
+
+                    <input
+                        type="hidden"
+                        name="lastName"
+                        id="lastName"
+                        value="Vuong"
+                    />
+                    <input
+                        type="hidden"
+                        name="studentId"
+                        id="studentId"
+                        value="120246186"
+                    />
+
+                    <div id="buttons">
+                        <input type="submit" name="submit" value="Submit" />
+                        <input type="reset" name="reset" value="Clear" />
+                    </div>
+                </form>
+            </div>
+
+            <aside>
+                <h4 class="hidden" id="errorHeader"></h4>
+                <div class="hidden" id="error"></div>
+            </aside>
+        </main>
+
+        <footer><h4>2018 - Edward Vuong</h4></footer>
+    </body>
+</html>
